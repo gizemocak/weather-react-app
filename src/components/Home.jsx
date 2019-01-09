@@ -1,23 +1,24 @@
 import React from "react";
 import Weather from "./Weather";
 import "../App.css";
+import countries from "../constants/constants";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       response: [],
-      city: ""
+      city: "",
+      country: "CA"
     };
   }
-
   handleFetch = e => {
     e.preventDefault();
     //TODO use async/await
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?q=${
         this.state.city
-      },us&appid=154d4d3b7cb496905768200e3bad4142`
+      },${this.state.country.toLowerCase()}&appid=154d4d3b7cb496905768200e3bad4142`
     )
       .then(res => res.json())
       .then(data => this.setState({ response: data.list }));
@@ -25,6 +26,10 @@ class Home extends React.Component {
 
   getInputValue = e => {
     this.setState({ city: e.target.value });
+  };
+
+  handleCountryChange = e => {
+    this.setState({ country: e.target.value });
   };
 
   render() {
@@ -41,6 +46,16 @@ class Home extends React.Component {
               onChange={this.getInputValue}
               className="input"
             />
+            <select
+              value={this.state.country}
+              onChange={this.handleCountryChange}
+            >
+              {countries.map(country => (
+                <option key={country.code} value={country.code}>
+                  {country.name}
+                </option>
+              ))}
+            </select>
             <button onClick={this.handleFetch} className="button">
               Show The Weather
             </button>
