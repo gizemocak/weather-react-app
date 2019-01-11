@@ -36,37 +36,37 @@ class Weather extends React.Component {
                   <li> {item.dt_txt.split(" ")[0]}</li>
                   <div className="icon">
                     {item.weather[0].main === "Rain" && (
-                      <WiDayRain size={40} color="#BD45D5" />
+                      <WiDayRain size={60} color="#fff" />
                     )}
                   </div>
                   <div className="icon">
                     {item.weather[0].main === "Snow" && (
-                      <WiDaySnow size={40} color="#BD45D5" />
+                      <WiDaySnow size={60} color="#fff" />
                     )}
                   </div>
                   <div className="icon">
                     {item.weather[0].main === "Clear" && (
-                      <WiDaySunny size={40} color="#BD45D5" />
+                      <WiDaySunny size={60} color="#fff" />
                     )}
                   </div>
                   <div className="icon">
                     {item.weather[0].main === "Clouds" && (
-                      <WiCloudy size={40} color="#BD45D5" />
+                      <WiCloudy size={60} color="#fff" />
                     )}
                   </div>
                   <div className="icon">
                     {item.weather[0].main === "Sunny" && (
-                      <WiDaySunny size={40} color="#BD45D5" />
+                      <WiDaySunny size={60} color="#fff" />
                     )}
                   </div>
                   <div className="icon">
                     {item.weather[0].main === "Thunderstorm" && (
-                      <WiDayThunderstorm size={40} color="#BD45D5" />
+                      <WiDayThunderstorm size={60} color="#fff" />
                     )}
                   </div>
                   <div className="icon">
                     {item.weather[0].main === "Foggy" && (
-                      <WiFog size={40} color="#BD45D5" />
+                      <WiFog size={60} color="#fff" />
                     )}
                   </div>
                   <li>{item.weather[0].main}</li>

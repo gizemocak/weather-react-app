@@ -1,5 +1,10 @@
 * {
   font-family: "Roboto", sans-serif;
+  background: url("./constants/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .App {
   margin-top: 10%;
@@ -11,22 +16,33 @@
 .input {
   margin-left: 10px;
   margin-bottom: 30px;
-  padding: 9px 7px 9px;
-  color: #7b68ee;
+  color: #fff;
+  font-size: 18px;
+  width: 240px;
+  height: 40px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 4px;
 }
 
 .button {
-  background: #7b68ee;
   color: white;
+  background: #d2691e;
   border: none;
   font-weight: bolder;
-  margin-left: 10px;
-  padding: 10px 7px 10px;
+  margin: 30px 0px 30px 0px;
+  padding: 13px 19px 13px 19px;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .button:hover {
-  background: white;
-  color: #7b68ee;
+  color: white;
+  background: #d2691e;
+  opacity: 1;
 }
 
 .list {
@@ -38,14 +54,13 @@
 
 .weather {
   border: 2px;
-  background: #e6e6fa;
   padding: 10px;
 }
 
 .header {
-  color: aqua;
+  color: #fff;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 50px;
   margin-bottom: 20px;
 }
 
@@ -53,9 +68,28 @@
   margin-top: 17px;
   font-weight: bold;
   font-size: 20px;
-  color: #6a5acd;
+  color: #fff;
 }
 
 .icon {
   margin-top: 15px;
+}
+
+.country {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.country select {
+  border: 1px solid #ccc;
+  font-size: 16px;
+  height: 34px;
+  width: 250px;
+  color: white;
+}
+
+li {
+  color: #fff;
+  font-weight: bold;
 }
