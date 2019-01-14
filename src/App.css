@@ -108,3 +108,29 @@ li {
   cursor: pointer;
   color: #fff;
 }
+
+footer {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+.social-icons {
+  margin-right: 10px;
+}
+
+.footer-climate {
+  font-weight: bold;
+  margin-right: 20px;
+  opacity: 0.8;
+  font-family: "Vibur", cursive;
+  font-size: 20px;
+}
+
+.name {
+  opacity: 0.6;
+  margin-left: 20px;
+  font-size: 13px;
+}

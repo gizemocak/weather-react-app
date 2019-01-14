@@ -2,6 +2,7 @@ import React from "react";
 import Weather from "./Weather";
 import "../App.css";
 import countries from "../constants/constants";
+import { SocialIcon } from "react-social-icons";
 
 class Home extends React.Component {
   constructor(props) {
@@ -68,6 +69,26 @@ class Home extends React.Component {
         {this.state.response.length > 0 && (
           <Weather response={this.state.response} />
         )}
+        <footer>
+          <span className="footer-climate">CliMate</span>
+          <SocialIcon
+            className="social-icons"
+            url="https://www.linkedin.com/in/gizemocak/"
+            bgColor="#bab8b8"
+          />
+          <SocialIcon
+            className="social-icons"
+            url="https://github.com/gizemocak"
+            bgColor="#bab8b8"
+          />
+          <SocialIcon
+            url="https://gizemocak.com/"
+            label="My portfolio"
+            bgColor="#bab8b8"
+          />
+          <span className="name">Gizem Ocak</span>
+          <span className="name">gizem_ocak@outlook.com</span>
+        </footer>
       </div>
     );
   }
