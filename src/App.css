@@ -5,6 +5,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  color: white;
 }
 .App {
   margin-top: 10%;
@@ -14,7 +15,6 @@
 }
 
 .input {
-  margin-left: 10px;
   margin-bottom: 30px;
   color: #fff;
   font-size: 18px;
@@ -30,7 +30,7 @@
   background: #d2691e;
   border: none;
   font-weight: bolder;
-  margin: 30px 0px 30px 0px;
+  margin: 30px 0px 40px 0px;
   padding: 13px 19px 13px 19px;
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
   opacity: 0.7;
@@ -60,15 +60,18 @@
 .header {
   color: #fff;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 60px;
   margin-bottom: 20px;
+  opacity: 0.8;
+  font-family: "Vibur", cursive;
 }
 
 .temperature {
   margin-top: 17px;
   font-weight: bold;
-  font-size: 20px;
-  color: #fff;
+  font-size: 25px;
+  color: #f4a460;
+  font-family: "Staatliches", cursive;
 }
 
 .icon {
@@ -92,4 +95,16 @@
 li {
   color: #fff;
   font-weight: bold;
+}
+
+.fahrenheit {
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.fahrenheit {
+  cursor: pointer;
+  color: #fff;
 }

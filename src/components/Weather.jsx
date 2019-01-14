@@ -8,12 +8,14 @@ import {
   WiFog
 } from "weather-icons-react";
 import "../App.css";
+import moment from "moment";
 
 class Weather extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      days: []
+      days: [],
+      fahrenheit: ""
     };
   }
   componentDidMount() {
@@ -22,6 +24,14 @@ class Weather extends React.Component {
     });
     this.setState({ days });
   }
+
+  changeToFahrenheit = () => {
+    this.setState({ temperature: "fahrenheit" });
+  };
+
+  changeToCelcius = () => {
+    this.setState({ temperature: "celcius" });
+  };
 
   render() {
     console.log(this.props);
@@ -33,7 +43,7 @@ class Weather extends React.Component {
             this.state.days.map(item => {
               return (
                 <div className="weather">
-                  <li> {item.dt_txt.split(" ")[0]}</li>
+                  <li> {moment(item.dt_txt.split(" ")[0]).format("dddd")}</li>
                   <div className="icon">
                     {item.weather[0].main === "Rain" && (
                       <WiDayRain size={60} color="#fff" />
@@ -71,14 +81,22 @@ class Weather extends React.Component {
                   </div>
                   <li>{item.weather[0].main}</li>
                   <div className="temperature">
-                    {Math.round((item.main.temp / 10 - 32) / 1.8)}℃
+                    {this.state.temperature === "" ||
+                    this.state.temperature === "celcius"
+                      ? `${Math.round((item.main.temp / 10 - 32) / 1.8)}℃`
+                      : `${Math.round(item.main.temp / 10)}°F`}
                   </div>
-                  <br />
-                  <br />
                 </div>
               );
             })}
         </ul>
+        <button onClick={this.changeToFahrenheit} className="fahrenheit">
+          °F
+        </button>
+        /
+        <button onClick={this.changeToCelcius} className="fahrenheit">
+          °C
+        </button>
       </div>
     );
   }
