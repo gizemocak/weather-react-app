@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Weather from "./Weather";
 import "../App.css";
 import countries from "../constants/constants";
@@ -14,20 +14,14 @@ class Home extends React.Component {
     };
   }
   handleFetch = async e => {
-    if (this.state.city !== "") {
-      e.preventDefault();
-      const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${
-          this.state.city
-        },${this.state.country.toLowerCase()}&appid=154d4d3b7cb496905768200e3bad4142&units=metric`
-      );
-      const json = await response.json();
-      this.setState({ response: json.list });
-    }
-  };
-
-  changeToFahrenheit = () => {
-    this.setState({ fahrenheit: "clicked" });
+    e.preventDefault();
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/forecast?q=${
+        this.state.city
+      },${this.state.country.toLowerCase()}&appid=154d4d3b7cb496905768200e3bad4142&units=metric`
+    );
+    const json = await response.json();
+    this.setState({ response: json.list });
   };
 
   getInputValue = e => {
@@ -40,7 +34,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <div className="header">CliMate</div>
         <form>
           <input
@@ -89,7 +83,7 @@ class Home extends React.Component {
           <span className="name">Gizem Ocak</span>
           <span className="name">gizem_ocak@outlook.com</span>
         </footer>
-      </div>
+      </Fragment>
     );
   }
 }
